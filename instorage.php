@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("php/_access.php");
 access();
 include_once("config.php");

@@ -14,8 +14,8 @@
                         </div>
                         <div class="link-wrap">
                             <ul class="link-ul">
-                                <li><a class="" href="#!"><i class="mdi mdi-phone"></i><?php echo $config['Company_phone']; ?></a></li>
-                                <li><a class="" href="#!"><i class="mdi mdi-email"></i><?php echo $config['Company_email']; ?></a></li>
+                                <!-- <li><a class="" href="#!"><i class="mdi mdi-phone"></i><?php echo $config['Company_phone']; ?></a></li>
+                                <li><a class="" href="#!"><i class="mdi mdi-email"></i><?php echo $config['Company_email']; ?></a></li> -->
                                 <li><a class="" href="#!"><i class="mdi mdi-map-marker"></i><?php echo $config['Company_address']; ?></a></li>
                             </ul>
                             <ul class="social-wrap">

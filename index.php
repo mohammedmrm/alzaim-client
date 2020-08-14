@@ -1,9 +1,8 @@
-<?
+<?php
 include_once("php/_access.php");
 access();
 include_once("config.php");
 ?>
-<?php require_once('config.php'); ?>
 <!DOCTYPE html>
 <html class=" ">
 
