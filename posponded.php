@@ -1,3 +1,8 @@
+<?
+include_once("php/_access.php");
+access();
+include_once("config.php");
+?>
 <!DOCTYPE html>
 <html class=" ">
 <?php require_once('head.php'); ?>

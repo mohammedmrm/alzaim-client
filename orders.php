@@ -1,3 +1,9 @@
+<?
+include_once("php/_access.php");
+access();
+include_once("config.php");
+?>
+
 <!DOCTYPE html>
 <html class=" ">
 <?php require_once('head.php'); ?>
@@ -238,16 +244,16 @@
             }
             $("#orders").append(
               `<div class="card darken-1">
-               <a class="modal-trigger" href="#orderdetailsModal" onclick="getOrderDetails('`+this.id+`')">
+               <a class="modal-trigger" href="#orderdetailsModal" onclick="getOrderDetails('` + this.id + `')">
                   <div class="card-content">
                       <span class="card-title  ">` + this.order_no + `</span>
                       <p class="text-center">` +
-                      this.price + '<br>' +
-                      this.customer_phone + '<br>' +
-                      this.city + ' | ' + this.town + ' | ' + this.address + '<br>' +
-                      this.store_name + '<br>' +
-                      'مضى ' + this.days + ' يوم على تسجيل الطلب<br>' +
-                      `</p>
+              this.price + '<br>' +
+              this.customer_phone + '<br>' +
+              this.city + ' | ' + this.town + ' | ' + this.address + '<br>' +
+              this.store_name + '<br>' +
+              'مضى ' + this.days + ' يوم على تسجيل الطلب<br>' +
+              `</p>
                   </div>
               </a>
                 <div class="card-action grey dark white-text">
