@@ -157,17 +157,17 @@ include_once("config.php");
         <h5 class="center bot-0 sec-tit white-text">احصائيات</h5>
         <p class="center-align white-text">احصائيات بجميع الطلبيات</p>
 
-        <div class="col s12 pad-0">
+        <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اليوم</h6>
             <h1 class="white-text center top-0" id="earning-last1"></h1>
             <h1 class="white-text center top-0" id="orders-last1"></h1>
         </div>
-        <div class="col s12 pad-0">
+        <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اخر اسبوع</h6>
             <h1 class="white-text center top-0" id="earning-last7"></h1>
             <h1 class="white-text center top-0" id="orders-last7"></h1>
         </div>
-        <div class="col s12 pad-0">
+        <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اخر شهر</h6>
             <h1 class="white-text center top-0" id="earning-last30"></h1>
             <h1 class="white-text center top-0" id="orders-last30"></h1>

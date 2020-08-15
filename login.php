@@ -3,9 +3,30 @@
 <html class=" ">
 
 <!-- END HEAD -->
-<?php include_once('head.php');?>
+<?php include_once('head.php'); ?>
 <!-- BEGIN BODY -->
+<style>
+    .input-field .prefix~input,
+    .input-field .prefix~textarea,
+    .input-field .prefix~label,
+    .input-field .prefix~.validate~label,
+    .input-field .prefix~.helper-text,
+    .input-field .prefix~.autocomplete-content {
+        margin-right: 2.5rem !important;
+    }
 
+    .input-field.col label {
+        right: .75rem;
+    }
+
+    body .login-area input[type="email"],
+    body .login-area input[type="password"],
+    body .login-area input[type="tel"],
+    body .login-area input[type="text"] {
+        border-bottom: 1px solid #4c4242;
+        color: #3a2020;
+    }
+</style>
 
 <body class="isfullscreen  html" data-header="light" data-footer="light" data-header_align="center" data-menu_type="left" data-menu="light" data-menu_icons="on" data-footer_type="left" data-site_mode="light" data-footer_menu="show" data-footer_menu_style="light">
     <div class="preloader-background">
@@ -16,7 +37,14 @@
     <!-- START navigation -->
     <div class="fixedtop topbar navigation" role="navigation">
         <div class="nav-wrapper container">
-            <span id="logo-container" href="index.php" class="gray-text center-text"><?php echo $config['Company_name']; ?></span>
+            <div class="row">
+                <div class="col s12 text-center">
+                    <span id="logo-container" href="index.php" class="gray-text center-text"><?php echo $config['Company_name']; ?></span>
+                </div>
+                <div class="col s12 text-center">
+                    <img width="250px" src="img/logos/logo.png" />
+                </div>
+            </div>
         </div>
     </div>
     <div class="access-login"></div>
@@ -30,16 +58,14 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="mdi mdi-phone prefix"></i>
                             <input id="username" type="text" class="black-text validate">
-                            <label for="username" class="">رقم الهاتف</label>
+                            <label for="username" class="grey-text">رقم الهاتف</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="mdi mdi-lock prefix"></i>
                             <input id="password" type="password" class="black-text validate">
-                            <label for="password" class="gray-text">كلمه المرور</label>
+                            <label for="password" class="grey-text">كلمه المرور</label>
                         </div>
                     </div>
                     <div class="row center">
