@@ -7,14 +7,13 @@
 <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
 <nav class="fixedtop topbar navigation" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="index.html" class=" brand-logo "><?php echo $config['Company_name']; ?></a>
+    <a id="logo-container" href="index.php" class=" brand-logo "><?php echo $config['Company_name']; ?></a>
     <a href="#" data-target="" class="waves-effect waves-circle navicon back-button htmlmode show-on-large "><i class="mdi mdi-chevron-left" data-page=""></i></a>
 
     <a href="index.php" data-target="slide-nav" class="waves-effect waves-circle navicon sidenav-trigger show-on-large"><i class="mdi mdi-menu"></i></a>
 
 
-    <sp href="logout.php" class="waves-effect waves-circle navicon right nav-site-mode show-on-large"><i class="mdi mdi-logout-variant"></i></a>
-    <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+    <a onclick="logout()" href="logout.php" class="waves-effect waves-circle navicon right nav-site-mode show-on-large"><i class="mdi mdi-logout-variant"></i></a>
   </div>
 </nav>
 <ul id="slide-nav" class="sidenav sidemenu">
@@ -88,3 +87,8 @@
       </li>
   </li>
 </ul>
+<script>
+  function logout(){
+    window.location.href = 'logout.php';
+  }
+</script>
