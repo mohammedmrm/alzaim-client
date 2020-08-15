@@ -10,7 +10,7 @@ function getStores(elem){
        $.each(res.data,function(){
          elem.append("<option value='"+this.id+"'>"+this.name+"-"+this.client_name+"-"+this.client_phone+"</option>");
        });
-       $("select").formSelect();
+       //$("select").formSelect();
        //elem.selectpicker('refresh');
        console.log(res);
      },
