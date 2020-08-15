@@ -94,5 +94,5 @@ if($success == '1'){
     }
   }
 }
-print_r(json_encode(array('orders'=>$orders,"success"=>$success,"data"=>$data,'pages'=>$pages,'nextPage'=>$page+2)));
+print_r(json_encode(array($query, 'orders'=>$orders,"success"=>$success,"data"=>$data,'pages'=>$pages,'nextPage'=>$page+2)));
 ?>

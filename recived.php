@@ -28,17 +28,6 @@ include_once("config.php");
   <?php include_once('top-menu.php'); ?>
   </li>
   <li class="copy-spacer"></li>
-  <li class="copy-wrap">
-    <div class="copyright">&copy; Copyright @ themepassion</div>
-
-
-
-    </ul>
-    <!-- END navigation -->
-
-
-
-  </li>
   </ul>
   <div class="container">
     <div class="section">
@@ -73,10 +62,9 @@ include_once("config.php");
               </div>
             </div>
             <button onclick="getorders('reload')" type="button" class="waves-effect waves-light btn-large green lighten-2 col s12">بحث</button>
-
+            </form>
         </div>
       </div>
-      </form>
       <div class="divider"></div>
     </div>
   </div>
@@ -218,7 +206,7 @@ include_once("config.php");
         $("#currentPage").val(1);
       }
       $.ajax({
-        url: "php/_getPospondedOrders.php",
+        url: "php/_getRecivedOrders.php",
         type: "POST",
         data: $("#searchForm").serialize(),
         beforeSend: function() {
