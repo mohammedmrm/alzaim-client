@@ -5,8 +5,6 @@
   }
 </style>
 <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
 <nav class="fixedtop topbar navigation" role="navigation">
   <div class="nav-wrapper container">
     <a id="logo-container" href="index.html" class=" brand-logo "><?php echo $config['Company_name']; ?></a>
@@ -15,7 +13,7 @@
     <a href="index.php" data-target="slide-nav" class="waves-effect waves-circle navicon sidenav-trigger show-on-large"><i class="mdi mdi-menu"></i></a>
 
 
-    <a href="logout.php" data-target="" class="waves-effect waves-circle navicon right nav-site-mode show-on-large"><i class="mdi mdi-logout-variant"></i></a>
+    <sp href="logout.php" class="waves-effect waves-circle navicon right nav-site-mode show-on-large"><i class="mdi mdi-logout-variant"></i></a>
     <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
   </div>
 </nav>

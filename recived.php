@@ -83,7 +83,7 @@ include_once("config.php");
   <!-- ============================= -->
   <div class="container">
     <div class="section">
-      <h5 class="pagetitle"> المؤجلات <span id="orders_count"></span></h5>
+      <h5 class="pagetitle"> الواصل <span id="orders_count"></span></h5>
       <div class="divider"></div>
     </div>
   </div>
