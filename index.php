@@ -159,18 +159,18 @@ include_once("config.php");
 
         <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اليوم</h6>
-            <h1 class="white-text center top-0" id="earning-last1"></h1>
-            <h1 class="white-text center top-0" id="orders-last1"></h1>
+            <h5 class="white-text center top-0" id="earning-last1"></h5>
+            <h5 class="white-text center top-0" id="orders-last1"></h5>
         </div>
         <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اخر اسبوع</h6>
-            <h1 class="white-text center top-0" id="earning-last7"></h1>
-            <h1 class="white-text center top-0" id="orders-last7"></h1>
+            <h5 class="white-text center top-0" id="earning-last7"></h5>
+            <h5 class="white-text center top-0" id="orders-last7"></h5>
         </div>
         <div class="col s4 pad-0">
             <h6 class="center white-text bot-0 light">اخر شهر</h6>
-            <h1 class="white-text center top-0" id="earning-last30"></h1>
-            <h1 class="white-text center top-0" id="orders-last30"></h1>
+            <h5 class="white-text center top-0" id="earning-last30"></h5>
+            <h5 class="white-text center top-0" id="orders-last30"></h5>
         </div>
     </div>
     <!-- <div class="container">

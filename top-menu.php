@@ -26,12 +26,14 @@
       <!-- <div class="background">
         <img src="assets/images/office.jpg">
       </div> -->
-      <div class="col s3 imgarea">
-        <a href="#user"><img class="circle" src="assets/images/user-37.jpg"></a></div>
-      <div class="col s9 infoarea">
-        <!-- <a href="#name"><span class="name">Cherry Smith</span></a>
-        <a href="#email"><span class="email">cherrysmith@gmail.com</span></a> -->
+      <img width="300" src="img/logos/logo.png">
+      <div class="col s12 imgarea">
+
       </div>
+      <!-- <div class="col s9 infoarea">
+        <a href="#name"><span class="name">Cherry Smith</span></a>
+        <a href="#email"><span class="email">cherrysmith@gmail.com</span></a>
+      </div> -->
     </div>
   </li>
 
