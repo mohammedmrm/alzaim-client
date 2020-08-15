@@ -4210,7 +4210,7 @@ body[data-site_mode="dark"] .preloader-background{
     background-color: #455A64;
 }
 .loading {
-    background-image: url(../img/logos/loading.gif);
+    background-image: url(../../img/logos/loading.gif);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
