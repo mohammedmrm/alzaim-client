@@ -12,11 +12,109 @@ include_once("config.php");
 <!-- BEGIN BODY -->
 
 <style>
-  .call {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+ .chatbody {
+  height: 350px;
+  border-bottom:2px solid #D3D3D3;
+  border-radius: 1px;
+  overflow-y: scroll;
+  padding-top:5px;
+  width:100%;
+  margin-top:10px;
+ }
+ .msg {
+   display: block;
+   position: relative;
+   margin-bottom:15px;
+   padding-bottom:10px;
+ }
+ .other{
+   position: relative;
+   margin-left:0px;
+   width:80%;
+   margin-right:auto;
+   text-align: left !important;
+ }
+ .other .content {
+   background-color: #F8F8FF;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+   text-align: left !important;
+ }
+
+ .mine {
+   position: relative;
+   width:80%;
+   margin-right: 2px;
+   text-align: right;
+ }
+ .mine .content {
+   background-color: #008B8B;
+   color:#F8F8FF;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+ }
+
+ .content{
+   position: relative;
+   padding:5px;
+   padding-left:15px;
+   padding-right:15px;
+   min-width:10px;
+   max-width:80%;
+   font-size: 16px;
+   color:#000000;
+   margin:0 !important;
+   display: inline-block;
+ }
+.name {
+  position: relative;
+  display: inline-block;
+  font-size:10px;
+  margin-bottom:2px;
+}
+.time {
+  display:inline-block;
+  position: relative;
+  font-size: 10px;
+  color: #696969;
+  margin-top:2px;
+}
+.inputs {
+  margin-bottom:20px;
+}
+.chat-btn:hover{
+  color: #F8F8FF;
+  text-decoration: none;
+}
+
+.chat-btn {
+  display: block;
+  background-color: #F96332;
+  color:#F8F8FF;
+  text-align: center;
+  padding: 2px;
+   box-shadow: 0 5px 30px 0 rgba(0,0,0,.11),0 5px 15px 0 rgba(0,0,0,.08)!important;
+}
+.chat-btn span{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.input-chat-send {
+  height: 40px !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+.btn-chat-send {
+  height: 40px;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius:5px !important;
+}
+.input-field .prefix ~ textarea {
+  margin-right: 2.6rem;
+}
+
 </style>
 
 <body class="html" <?php echo $config['theme-config']; ?>>
@@ -48,6 +146,12 @@ include_once("config.php");
   </div>
   <!-- ============================= -->
   <div class="container">
+
+    <div class="row ">
+      <div class="col s12 pad-0">
+        <a class="col s12 waves-effect waves-light btn modal-trigger" href="#chat">محادثه</a>
+      </div>
+    </div>
     <div class="row ">
       <div class="col s12 pad-0">
         <div class="row bot-0">
@@ -73,6 +177,22 @@ include_once("config.php");
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="chat" class="modal bottom-sheet modal-fixed-footer" style="max-height: 80%;">
+    <div class="modal-content">
+      <h4>المحادثه</h4>
+      <div class="col-12 chatbody" id="chatbody">
+
+      </div>
+    </div>
+    <div class="modal-footer">
+    <div class="row">
+                <button type="button" class="modal-close waves-effect waves-green btn-flat col s2" data-dismiss="modal">اغلاق</button>
+                <textarea id="message" style="font-size: 20px;" placeholder="اكتب هنا..." class="col s8"></textarea>
+                <button onclick="sendMessage()" style="font-size: 20px;" class="col s2 mdi btn-lg mdi-send  waves-effect waves-green btn-flat col s2" type="button">ارسال</button>
+    </div>
     </div>
   </div>
   <input type="hidden" id="order_id" value="<?php echo $_GET['o'] ?>">
@@ -201,19 +321,19 @@ include_once("config.php");
     });
 
     function OrderChat(id, last) {
-      if (id != $("#chat_order_id").val()) {
+      if (id != $("#order_id").val()) {
         chat = 1;
         $("#chatbody").html("");
       } else {
         chat = 0;
       }
-      $("#chat_order_id").val(id);
+      $("#order_id").val(id);
 
       $.ajax({
         url: "php/_getMessages.php",
         type: "POST",
         data: {
-          order_id: $("#chat_order_id").val(),
+          order_id: $("#order_id").val(),
           last: last
         },
         beforeSend: function() {
@@ -269,13 +389,13 @@ include_once("config.php");
         type: "POST",
         data: {
           message: $("#message").val(),
-          order_id: $("#chat_order_id").val()
+          order_id: $("#order_id").val()
         },
         beforeSend: function() {
           $("#chatbody").append('<div id="spiner" class="spiner"></div>');
         },
         success: function(res) {
-          OrderChat($("#chat_order_id").val(), $("#last_msg").val());
+          OrderChat($("#order_id").val(), $("#last_msg").val());
           $("#chatbody").animate({
             scrollTop: $('#chatbody').prop("scrollHeight")
           }, 100);
@@ -290,7 +410,8 @@ include_once("config.php");
     }
     var mychatCaller;
     mychatCaller = setInterval(function() {
-      OrderChat($("#chat_order_id").val(), $("#last_msg").val());
+      OrderChat($("#order_id").val(), $("#last_msg").val());
+      console.log($("#order_id").val());
     }, 1000);
 
 
@@ -368,6 +489,19 @@ include_once("config.php");
         },
         error: function(e) {
           console.log(e);
+        }
+      });
+    }
+
+    if ($("#notification_seen_id").val() > 0) {
+      $.ajax({
+        url: "php/_setNotificationSeen.php",
+        type: "POST",
+        data: {
+          id: $("#notification_seen_id").val()
+        },
+        success: function(res) {
+          console.log(res);
         }
       });
     }
