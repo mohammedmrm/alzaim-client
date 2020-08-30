@@ -58,7 +58,7 @@ include_once("config.php");
               </select>
             </div>
             <div class=" col s6">
-              <select id="store" name="town">
+              <select id="store" name="store">
               </select>
             </div>
             <div class="row">
@@ -72,10 +72,10 @@ include_once("config.php");
               </div>
             </div>
             <button onclick="getorders('reload')" type="button" class="waves-effect waves-light btn-large green lighten-2 col s12">بحث</button>
-
+            <input type="hidden" name="currentPage" id="currentPage" value="1">
+            </form>
         </div>
       </div>
-      </form>
       <div class="divider"></div>
     </div>
   </div>
