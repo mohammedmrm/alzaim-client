@@ -23,7 +23,7 @@
        </a>
       </li>
      <li>
-       <a href="returned.php"> <i class="mdi mdi-home-outline"></i>
+       <a href="returned.php"> <i class="mdi mdi-backup-restore"></i>
          <span>الرواجع</span>
        </a>
      </li>
@@ -33,7 +33,7 @@
        </a>
      </li>
      <li>
-       <a href="recived.php"> <i class="mdi mdi-laptop"></i>
+       <a href="recived.php"> <i class="mdi mdi-checkbox-multiple-marked-circle-outline"></i>
          <span>الواصل</span>
        </a>
      </li>
