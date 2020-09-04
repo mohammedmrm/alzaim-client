@@ -167,7 +167,6 @@ body{
 }
 body, body *, p :not(.mdi){
   font-family: 'Cairo';
-  font-size: 16px;
   line-height: 26px
   direction: rtl !important;
 }

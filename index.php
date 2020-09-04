@@ -6,7 +6,12 @@ include_once("config.php");
 <!DOCTYPE html>
 <html class=" ">
 
+<style>
+.item-content {
+   padding: 0 !important;
 
+}
+</style>
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
@@ -51,102 +56,14 @@ include_once("config.php");
 
     <div class="carousel carousel-fullscreen carousel-slider about_carousel">
         <div class="carousel-item" href="#one!">
-            <div class="bg" style="background-image:url(img/logos/logo.png)"></div>
-            <div class="item-content center-align white-text">
-                <div class="spacer-large"></div>
-                <h3>الزعيم للتوصيل السريع</h3>
-                <h5 class="light white-text"></h5>
+            <div class="item-content">
+               <?php echo $config['c_ad1'];?>
             </div>
         </div>
         <div class="carousel-item" href="#two!">
-            <div class="bg" style="background-image: url('img/logos/logo.png')"></div>
-            <div class="item-content left-align white-text">
-                <div class="spacer-large"></div>
-                <h3>الزعيم للتوصيل السريع</h3>
-                <h5 class="light white-text"></h5>
+            <div class="item-content">
+                <?php echo $config['c_ad2'];?>
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="section">
-
-            <!--   Icon Section   -->
-            <!-- <div class="row">
-                <div class="col s12 m12 l3">
-                    <div class="icon-block">
-                        <h2 class="center primary-text"><i class="mdi mdi-trophy-outline"></i></h2>
-                        <h6 class="center">Super Fast</h6>
-                        <p class="center">Zak is designed to be super fast and light in weight. It speeds your development and helps smooth user interation.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m12 l3">
-                    <div class="icon-block">
-                        <h2 class="center primary-text"><i class="mdi mdi-shape-outline"></i></h2>
-                        <h6 class="center">Tons of Features</h6>
-                        <p class="center">By utilizing elements and principles of Material Design, Zak is designed with unique set of features and functionalities.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m12 l3">
-                    <div class="icon-block">
-                        <h2 class="center primary-text"><i class="mdi mdi-code-tags-check"></i></h2>
-                        <h6 class="center">Quality Code</h6>
-                        <p class="center">Zak follows black box level coding standard. All the code is well formatted and commented.</p>
-                    </div>
-                </div>
-
-
-                <div class="col s12 m12 l3">
-                    <div class="icon-block">
-                        <h2 class="center primary-text"><i class="mdi mdi-toolbox-outline"></i></h2>
-                        <h6 class="center">Multi Purpose</h6>
-                        <p class="center">Zak can be customized and used for any niche. The vast possibilities of this template makes it multi purpose.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="divider"></div>
-            <h5 class="center bot-20 sec-tit">Our Team</h5>
-
-            <div class="row ui-mediabox team-box">
-                <div class="col s12 pad-0">
-                    <a class="img-wrap" href="assets/images/team-6.jpg" data-fancybox="images" data-caption="John Parker">
-                        <img class="z-depth-1" style="width: 100%;" src="assets/images/team-6.jpg">
-                    </a>
-                    <h6 class="bot-0">John Parker</h6>
-                    <span class="text-upper light small">CEO</span>
-                    <div class="spacer"></div>
-                </div>
-
-                <div class="col s12 pad-0">
-                    <a class="img-wrap" href="assets/images/team-1.jpg" data-fancybox="images" data-caption="Gemini Douglas">
-                        <img class="z-depth-1" style="width: 100%;" src="assets/images/team-1.jpg">
-                    </a>
-                    <h6 class="bot-0">Gemini Douglas</h6>
-                    <span class="text-upper light small">Sr. Developer</span>
-                    <div class="spacer"></div>
-                </div>
-
-                <div class="col s12 pad-0">
-                    <a class="img-wrap" href="assets/images/team-2.jpg" data-fancybox="images" data-caption="Jason Clarke">
-                        <img class="z-depth-1" style="width: 100%;" src="assets/images/team-2.jpg">
-                    </a>
-                    <h6 class="bot-0">Jason Clarke</h6>
-                    <span class="text-upper light small">Sr. Designer</span>
-                </div>
-
-
-                <div class="col s12 pad-0">
-                    <a class="img-wrap" href="assets/images/team-3.jpg" data-fancybox="images" data-caption="Tom Kent">
-                        <img class="z-depth-1" style="width: 100%;" src="assets/images/team-3.jpg">
-                    </a>
-                    <h6 class="bot-0">Tom Kent</h6>
-                    <span class="text-upper light small">Sr. Developer</span>
-                    <div class="spacer"></div>
-                </div>
-            </div> -->
-
         </div>
     </div>
 
