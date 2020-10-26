@@ -35,7 +35,7 @@ try{
             clients.name as client_name,clients.phone as client_phone,
             cites.name as city,towns.name as town,branches.name as branch_name,
             if(staff.phone is null,'07721397505',staff.phone) as driver_phone,
-            stores.name as store_name ,order_status.status as status_name
+            stores.name as store_name ,order_status.status as status_name,tracking.note as t_note
             from orders left join
             clients on clients.id = orders.client_id
             left join cites on  cites.id = orders.to_city
@@ -44,42 +44,48 @@ try{
             left join stores on  stores.id = orders.store_id
             left join branches on  branches.id = orders.to_branch
             left join order_status on  order_status.id = orders.order_status_id
+            left join (
+              select max(id) as last_id,order_id from tracking group by order_id
+            ) a on a.order_id = orders.id
+            left join tracking on a.last_id = tracking.id
             ";
   $where = "where";
   if($status == "onway"){
   $filter = "orders.client_id ='".$userid."'  and (orders.confirm=1 or orders.confirm=4) and (
-            order_status_id = 1 or
-            order_status_id = 2 or
-            order_status_id = 3 or
-            order_status_id = 8 or
-            order_status_id = 13
+            orders.order_status_id = 1 or
+            orders.order_status_id = 2 or
+            orders.order_status_id = 3 or
+            orders.order_status_id = 8 or
+            orders.order_status_id = 13
             )";
   }
   else if ($status == "returned"){
-   $filter = "orders.invoice_id= 0 and orders.client_id =".$userid." and (orders.order_status_id=9 or orders.order_status_id=6 or orders.order_status_id=5)  and (orders.confirm=1 or orders.confirm=4) and orders.storage_id <> 1 and orders.storage_id <> -1";
+   $filter = "orders.invoice_id= 0 and orders.client_id =".$userid." and (orders.orders.order_status_id=9 or orders.orders.order_status_id=6 or orders.orders.order_status_id=5)  and (orders.confirm=1 or orders.confirm=4) and orders.storage_id <> 1 and orders.storage_id <> -1";
   }
   else if ($status == "recived"){
-   $filter = "orders.invoice_id = 0 and orders.client_id =".$userid." and (order_status_id=4)  and (orders.confirm=1 or orders.confirm=4)";
+   $filter = "orders.invoice_id = 0 and orders.client_id =".$userid." and (orders.order_status_id=4)  and (orders.confirm=1 or orders.confirm=4)";
   }
   else if ($status == "instorage"){
    $filter = "orders.client_id =".$userid." and orders.confirm=1 and orders.storage_id = 1 and invoice_id=0";
   }
   else if ($status == "posponded"){
-   $filter = "orders.client_id =".$userid." and order_status_id=7  and (orders.confirm=1)";
+   $filter = "orders.client_id =".$userid." and orders.order_status_id=7  and (orders.confirm=1)";
  }
   else{
   $filter = "orders.client_id ='".$userid."'  and (orders.confirm=1 or orders.confirm=4) and (
-            order_status_id = 1 or
-            order_status_id = 2 or
-            order_status_id = 3 or
-            order_status_id = 8 or
-            order_status_id = 13
+            orders.order_status_id = 1 or
+            orders.order_status_id = 2 or
+            orders.order_status_id = 3 or
+            orders.order_status_id = 8 or
+            orders.order_status_id = 13
             )";
   }
   if(!empty($search)){
    $filter .= " and (order_no like '%".$search."%'
                     or customer_name like '%".$search."%'
-                    or customer_phone like '%".$search."%')
+                    or customer_phone like '%".$search."%'
+                    or tracking.note like '%".$search."%'
+                    )
                     ";
   }
   if($city > 0){
