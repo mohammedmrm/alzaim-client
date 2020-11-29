@@ -55,6 +55,7 @@
              'title'  =>$title,
              "sound"=>'default',
              'subtitle'=> $order,
+             '_displayInForeground'=>true,
              'vibrate'=> [300,100,400,100,400,100,400],
              'vibrationPattern'=> [300,100,400,100,400,100,400],
              'data' => $extraNotificationData
@@ -74,7 +75,9 @@
               $i++;
             }
             // Notify an interest with a notification
-            $r = $expo->notify([$channelName], $notification);
+            if($channelName){
+              $r = $expo->notify([$channelName], $notification);
+            }
         } catch (Exception $e) {
             $r = $e;
         }
@@ -88,7 +91,7 @@
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fcmNotification));
         $result = curl_exec($ch);
         curl_close($ch);
-         $f = [$result,$r,$recipient,$channelName];
+         $f = [$result,$r,$recipient,$channelName,substr($v, 0, 17)];
         return $f;
  }
 ?>
