@@ -27,8 +27,8 @@
         <img src="assets/images/office.jpg">
       </div> -->
       <img width="300" src="img/logos/logo.png">
-      <div class="col s12 imgarea">
-
+      <div class="col s12">
+           <h1><?php echo $_SESSION['user_details']['name'];?></h1>
       </div>
       <!-- <div class="col s9 infoarea">
         <a href="#name"><span class="name">Cherry Smith</span></a>
